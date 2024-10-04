@@ -1,0 +1,20 @@
+int maxReach = 0; // This will store the farthest index we can jump to.
+        
+        // Loop through each index in the array.
+        for (int i = 0; i < nums.length; i++) {
+            // If the current index is beyond the farthest point we've been able to reach, return false.
+            if (i > maxReach) {
+                return false;
+            }
+            
+            // Update the farthest point we can reach from this index.
+            maxReach = Math.max(maxReach, i + nums[i]);
+            
+            // If at any point we can reach or go beyond the last index, return true.
+            if (maxReach >= nums.length - 1) {
+                return true;
+            }
+        }
+        
+        // If the loop ends without returning, that means we can reach the last index.
+        return true;
