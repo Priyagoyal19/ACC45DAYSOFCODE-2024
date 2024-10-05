@@ -1,0 +1,22 @@
+public class Solution {
+    public int strStr(String haystack, String needle) {
+        // Base case: If the needle is empty, return 0
+        if (needle.isEmpty()) {
+            return 0;
+        }
+
+        int needleLength = needle.length();
+        int haystackLength = haystack.length();
+
+        // Loop through the haystack up to where the needle can fit
+        for (int i = 0; i <= haystackLength - needleLength; i++) {
+            // Check if the substring of haystack starting at i matches needle
+            if (haystack.substring(i, i + needleLength).equals(needle)) {
+                return i;
+            }
+        }
+
+        // If no match is found, return -1
+        return -1;
+    }
+}
