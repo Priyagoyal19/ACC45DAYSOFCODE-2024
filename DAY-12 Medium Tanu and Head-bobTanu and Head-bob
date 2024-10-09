@@ -1,0 +1,46 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    Scanner read = new Scanner(System.in);
+	    int t = read.nextInt();
+	    for(int i=0; i<t; i++){
+	        int n = read.nextInt();
+	        String s = read.next();
+	        char[] c = s.toCharArray();
+	        int cy = 0;
+	        int ci = 0;
+	        for(int j=0; j<n; j++)
+	        {
+	            if(c[j] == 'Y')
+	            {
+	                cy = cy + 1;
+	            }
+	            else if(c[j] == 'I')
+	            {
+	                ci = ci + 1;
+	            }
+	            else
+	            {
+	                continue;
+	            }
+	        }
+	        if(ci!=0)
+	        {
+	            System.out.println("INDIAN");
+	        }
+	        else if(cy!=0)
+	        {
+	            System.out.println("NOT INDIAN");
+	        }
+	        else{
+	            System.out.println("NOT SURE");
+	        }
+	    }
+	}
+}
